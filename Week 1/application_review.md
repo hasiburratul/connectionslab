@@ -6,6 +6,7 @@ Application: Slack https://slack.com/
 
 ## Slack
 Slack is a messaging app for business that connects people to the information they need. By bringing people together to work as one unified team, Slack transforms the way organizations communicate. It offers public and private channels, easy file sharing, and critical integrations with Zoom and Google Drive. Slack was the first application that came to my mind during the class discussion on connected applications. 
+
 ![](slack.png)
 
 ## Critique
