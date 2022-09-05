@@ -13,8 +13,8 @@ For week 1, the assignment was to make a static website on our any previous proj
 ### WireFrame 
 
 For the project I created two wireframes. Both were quite similar. 
-<img src="image/wireframe1.jpeg" width="600">
-<img src="image/wireframe2.jpeg" width="600">
+<img src="wireframe/wireframe1.jpeg" width="600">
+<img src="wireframe/wireframe2.jpeg" width="600">
 
 Eventually I worked on the second wireframe. Details are as follows:
 
