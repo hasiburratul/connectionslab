@@ -31,7 +31,7 @@ Eventually I worked on the second wireframe. Details are as follows:
 
 ### Process & Insights
 
-After preparing my wireframe, I started developing the page only with html.  You can acccess the directly translated html file here [Webpage-HTML](https://hasiburratul.github.io/connectionslab/Week_1/catfoliowireframe/). <br>
+After preparing my wireframe, I started developing the page only with html.  You can acccess the directly translated html file here [Webpage-HTML](https://hasiburratul.github.io/connectionslab/Week_1/catfoliowireframe). <br>
 
 The navigation bar directs to different sections of the website, as this a single page website. The logo also works as a link to the top section (Home). Both the navigation bar and logo change their opacity and color while hovering on them. I have used both the vw and px format. I have added the vw later to make the website responsive. <br>
 
