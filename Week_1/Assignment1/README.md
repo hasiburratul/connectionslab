@@ -1,4 +1,4 @@
-# Citation Portfolio Page 
+# Catfolio: Campus Cats Page 
 
 **Title**: Catfolio : Campus Cats Page <br>
 **Date**: 05 September 2022 <br>
@@ -31,15 +31,24 @@ Eventually I worked on the second wireframe. Details are as follows:
 
 ### Process & Insights
 
-I started with the header. On the right, there is my logo, also a link to the "homepage". Although it is a single page website, I added navigation bar with the list of links to multiple pages. On hover, the logo reduces it's opacity and the link texts change color. This was added to give more feedback to the users. <br>
+After preparing my wireframe, I started developing the page only with html.  You can acccess the directly translated html file here [Webpage-HTML](https://hasiburratul.github.io/connectionslab/Week_1/Assignment1/wireframe-html). <br>
 
-For the font sizes, I used vw to keep my design consistent on all browsers and make it responsive to different devices. <br>
+The navigation bar directs to different sections of the website, as this a single page website. The logo also works as a link to the top section (Home). Both the navigation bar and logo change their opacity and color while hovering on them. I have used both the vw and px format. I have added the vw later to make the website responsive. <br>
 
-For the section-2-overview making a 4-box-grid-system was challenging. I leanrt how to use **grid-template-columns** and **grid-template-rows** to adjust the grid template. I still need to improve my skills on grid system. I want to learn how to make customized grid with various cell sizes. <br>
+In the section 1, with the help of css I have just displayed basic info on top of a background image. <br>
 
-For the content part (background, UX design, Playtesting ...), I downloaded portfolio I created on figma and uploaded to the website as images. This way, I could display more customized design and add graphs easily. <br>
+For the section 2, learning the css was extremely difficult for me. To align the image I have relied on Flex. To learn image overlay effects I took help from W3 schools. I have also added another background image in this section. <br>
+
+The section 3 only contains an embedded youtube video. The video has muted autoplay upon scrolling over it. <br>
+
+In the section 4, I have added social media buttons with help from W3 schools. <br>
+
+In the footer, I have again used the flex and displayed basic information.
 
 ---
 
 ### Page Screenshot
 
+<img src="image/snap1.png" width="600">
+<img src="image/snap2.png" width="600">
+<img src="image/snap3.png" width="600">
