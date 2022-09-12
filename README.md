@@ -13,3 +13,9 @@ This repository contains all the materials (i.e. weekly tasks, projects, handout
 
 Static webpage documenting NYUAD Campus Cats
 
+## Week 2 | JS Events
+### Assignment: Tic Tac Toe
+
+[Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_1/Assignment1)
+
+[Tic Tac Toe](https://hasiburratul.github.io/connectionslab/Week_2/Assignment2/)
