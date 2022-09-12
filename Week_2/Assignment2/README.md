@@ -1,4 +1,4 @@
-# Catfolio: TIC TAC TOE
+# TIC TAC TOE
 
 **Title**: Tic Tac Toe <br>
 **Date**: 12 September 2022 <br>
