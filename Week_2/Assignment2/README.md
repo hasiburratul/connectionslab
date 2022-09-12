@@ -5,7 +5,7 @@
 **Deliverable**: CSS/HTML/JS Webpage <br>
 
 
-For week 1, the assignment was to make a website using HTML, CSS, and Javascript. I have made a Tic Tac Toe Game using javascript. There's only one mode in the game i.e. Player vs Computer.
+For week 2, the assignment was to make a website using HTML, CSS, and Javascript. I have made a Tic Tac Toe Game using javascript. There's only one mode in the game i.e. Player vs Computer.
 
 [Access Project Here](https://hasiburratul.github.io/connectionslab/Week_2/Assignment2/)
 
