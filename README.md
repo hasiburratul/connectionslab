@@ -16,6 +16,6 @@ Static webpage documenting NYUAD Campus Cats
 ## Week 2 | JS Events
 ### Assignment: Tic Tac Toe
 
-[Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_1/Assignment1)
+[Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_2/Assignment2)
 
 [Tic Tac Toe](https://hasiburratul.github.io/connectionslab/Week_2/Assignment2/)
