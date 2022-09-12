@@ -7,7 +7,7 @@
 
 For week 1, the assignment was to make a website using HTML, CSS, and Javascript. I have made a Tic Tac Toe Game using javascript. There's only one mode in the game i.e. Player vs Computer.
 
-[Access Project Here](https://hasiburratul.github.io/connectionslab/Week_1/Assignment2/)
+[Access Project Here](https://hasiburratul.github.io/connectionslab/Week_2/Assignment2/)
 
 
 ### WireFrame 
