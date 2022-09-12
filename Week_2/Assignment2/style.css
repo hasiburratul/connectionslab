@@ -1,0 +1,87 @@
+button {
+	background: none;
+	border: 1px solid white;
+	color: inherit;
+	/* cursor: default; */
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	margin: 0;
+	padding: 0;
+	-webkit-appearance: button; /* for input */
+  }
+  input::-moz-focus-inner,
+  button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+  }
+  
+  body {
+	text-align: center;
+	background: black;
+	user-select: none;
+  }
+  
+  h1 {
+	font-family: "Monoton", cursive;
+	font-size: 52px;
+	background: -webkit-linear-gradient(#ffc500, #c21500);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  }
+  
+  .title {
+	animation-duration: 2s;
+	margin-top: 10px;
+	margin-bottom: 10px;
+  }
+  
+  .selectors {
+	background-color: black;
+	font-family: "Monoton", cursive;
+	font-size: 32px;
+	color: white;
+	width: 50px;
+	height: 50px;
+	margin: 5px;
+	margin-bottom: 15px;
+  }
+  
+  .gameboard {
+	margin: auto;
+	text-align: top;
+	background-color: #c21500; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+	  left top,
+	  #ffc500,
+	  #c21500
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-linear-gradient(
+	  bottom right,
+	  #ffc500,
+	  #c21500
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+	  left top,
+	  #ffc500,
+	  #c21500
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(
+	  bottom right,
+	  #ffc500,
+	  #c21500
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  
+  td {
+	vertical-align: middle;
+	border: 1px solid white;
+  }
+  
+  .box {
+	width: 60px;
+	height: 60px;
+	color: white;
+	font-family: "Monoton", cursive;
+	font-size: 32px;
+  }
