@@ -33,4 +33,4 @@ To understand the logic of the game I have used Geeks4Geeks website. https://www
 ### Page Screenshot
 
 <img src="images/1.png" width="600">
-<img src="images/1.png" width="600">
+<img src="images/2.png" width="600">
