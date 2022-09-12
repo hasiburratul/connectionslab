@@ -1,4 +1,4 @@
-# Catfolio: Campus Cats Page 
+# Catfolio: TIC TAC TOE
 
 **Title**: Tic Tac Toe <br>
 **Date**: 12 September 2022 <br>
