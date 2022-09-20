@@ -10,7 +10,8 @@ For Project 1, I am planning to make a website to get live feed information from
 
 ### WireFrame 
 
-For the project I have created one wireframe.
+For the project I have created one wireframe. <br>
+
 <img src="images/wireframe.png" width="600">
 
 ---
