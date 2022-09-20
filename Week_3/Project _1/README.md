@@ -18,7 +18,7 @@ For the project I have created one wireframe.
 
 ### Process & Insights
 
-So far, I haven't made much progress on Assignment 1.   <br>
+So far, I haven't made much progress on Project 1.   <br>
 
 As I didn’t have any experience with APIs and Mapbox, I spent a lot of time tinkering with the box. Initially, I made the current website just to understand how an API works on a website. I have also learnt how to use the weather APIs with Mapbox. I am still tinkering with the APIs. 
 <br>
