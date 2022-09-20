@@ -19,3 +19,9 @@ Static webpage documenting NYUAD Campus Cats
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_2/Assignment2)
 
 [Tic Tac Toe](https://hasiburratul.github.io/connectionslab/Week_2/Assignment2/)
+
+## Week 3 | 
+### Assignment: Project 1
+
+[Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_3/Project_1)
+
