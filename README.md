@@ -23,5 +23,5 @@ Static webpage documenting NYUAD Campus Cats
 ## Week 3 | 
 ### Assignment: Project 1
 
-[Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_3/Project_1)
+[Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_3/Project1)
 
