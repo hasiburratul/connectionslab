@@ -1,0 +1,28 @@
+{
+  "name": "Battle",
+  "version": "1.0.0",
+  "description": "90's Tank Game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Hasibur",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "express": "^4.10.6",
+    "express-json": "^1.0.0",
+    "jasmine-jquery": "^2.0.5",
+    "jasmine-node": "^1.14.5",
+    "jquery": "^2.1.1",
+    "socket.io": "^1.2.1"
+  }
+}
