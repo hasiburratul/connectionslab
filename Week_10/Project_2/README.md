@@ -21,7 +21,7 @@ For the game I started the project with two wireframe. I made one wireframe for 
 
 <br> <br>
 
-<img src="images/gamepage" width="600"> <br> <br>
+<img src="images/gamepage.jpg" width="600"> <br> <br>
 
 ### Game Development 
 
