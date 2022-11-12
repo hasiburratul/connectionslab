@@ -26,7 +26,7 @@ Static webpage documenting NYUAD Campus Cats
 [International Space Station Live Tracker](https://hasiburratul.github.io/connectionslab/Week_3/Project1/)
 
 # Week 10 |
-### Assignment: Prokject 2
+### Assignment: Project 2
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/Week_10/Project_2/README.md)
 
