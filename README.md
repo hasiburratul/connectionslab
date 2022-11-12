@@ -30,6 +30,6 @@ Static webpage documenting NYUAD Campus Cats
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/Week_10/Project_2/README.md)
 
-[90's Tank Game](htpps://tank-game-socket.herokuapp.com/)
+[90's Tank Game](htpps://tank-game-socket.herokuapp.com)
 
 
