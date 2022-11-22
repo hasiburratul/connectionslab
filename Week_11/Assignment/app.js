@@ -26,7 +26,7 @@ function draw() {
     adjustFontSize();
 }
 
-var rightEye, leftEye, eyesDistance;
+let rightEye, leftEye, eyesDistance;
 
 // Custom function to detect the eye distance
 function findEyes() {
@@ -50,7 +50,7 @@ function findEyes() {
     }
 }
 
-var fontSize;
+let fontSize;
 function adjustFontSize() {
     // The font size and the eyesDistance has an inverse variation.
     // This is a formula that I devised.
