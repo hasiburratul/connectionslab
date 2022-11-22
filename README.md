@@ -35,6 +35,6 @@ Static webpage documenting NYUAD Campus Cats
 # Week 11 |
 ### Assignment: Adjust it
 
-[Project Documentation](https://github.com/hasiburratul/connectionslab/Week_11/Assignment)
+[Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_11/Assignment)
 
-[Adjust it](https://github.com/hasiburratul/connectionslab/Week_11/Assignment/)
+[Adjust it](https://github.com/hasiburratul/connectionslab/tree/main/Week_11/Assignment/)
