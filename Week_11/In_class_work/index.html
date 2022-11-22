@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.min.js"></script>
+    <script defer src="test.js"></script>
+</head>
+
+<body>
+    <p>Type:</p>
+    <div id="type-options">
+        <input class="typeOption" type="radio" id="typeSine" name="type" value="sine" checked />
+        <label for="typeSine">Sine</label>
+
+        <input class="typeOption" type="radio" id="typeSquare" name="type" value="square" />
+        <label for="typeSquare">Square</label>
+
+        <input class="typeOption" type="radio" id="typeTriangle" name="type" value="triangle" />
+        <label for="typeTriangle">Triangle</label>
+
+        <input class="typeOption" type="radio" id="typeSawtooth" name="type" value="sawtooth" />
+        <label for="typeSawtooth">Sawtooth</label>
+    </div>
+
+    <div>
+        <input type="range" id="volume" name="volume" min="-30" max="0" value='-7' />
+        <label for="volume">Volume</label>
+    </div>
+    <div>
+        <input type="range" id="frequency" name="frequency" min="20" max="2000" value='440' step='10' />
+        <label for="frequency">Frequency</label>
+    </div>
+    <button type="submit">Start</button>
+</body>
+
+</html>
