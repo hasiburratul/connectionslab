@@ -32,4 +32,9 @@ Static webpage documenting NYUAD Campus Cats
 
 [90's Tank Game](https://tank-game-socket.herokuapp.com/)
 
+# Week 11 |
+### Assignment: Adjust it
 
+[Project Documentation](https://github.com/hasiburratul/connectionslab/Week_11/Assignment)
+
+[Adjust it](https://github.com/hasiburratul/connectionslab/Week_11/Assignment/)
