@@ -344,7 +344,7 @@ socket.on('canvasUpdate', function(data) {
 });
 ```
 
-<br> Updates the bullets based on information received from enemy player </b>
+<b> Updates the bullets based on information received from enemy player </b>
 
 ```
 socket.on('updateBullets', function(data) {
@@ -352,7 +352,7 @@ socket.on('updateBullets', function(data) {
 });
 ```
 
-<b> Reduces health when enemy sends info that it hit you <b>
+<b> Reduces health when enemy sends info that it hit you </b>
 
 ```
 socket.on('takeDamage', function(data) {
@@ -360,7 +360,7 @@ socket.on('takeDamage', function(data) {
 });
 ```
 
-<b> When the enemy's health hits zero you win <b>
+<b> When the enemy's health hits zero you win </b>
 socket.on('iLost', function(data) {
 
 	myTank.gameOver = 1;
