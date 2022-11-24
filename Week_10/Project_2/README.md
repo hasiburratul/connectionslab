@@ -300,7 +300,7 @@ function drawBullets(bulletArray,color) {
 
 ### Tank's Physics
 
-<b> I tried immitate the real life tank's physics in the game. Hence, tank's movement aren't smooth enough. The turret of the tank also has different movement requirements than the tank itself as like the real life tank. The tank also has a fixed health prior to the start of the game. The tank also has acceleration and deceleration besides their normal movement.
+<b> I tried immitate the real life tank's physics in the game. Hence, tank's movement aren't smooth enough. The turret of the tank also has different movement requirements than the tank itself as like the real life tank. The tank also has a fixed health prior to the start of the game. The tank also has acceleration and deceleration besides their normal movement. </b>
 
 ```
 let Tank = function(nickname, color, coordinates, angle) {
