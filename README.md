@@ -31,7 +31,7 @@ Static webpage documenting NYUAD Campus Cats
 [Joke API](https://hasiburratul.github.io/connectionslab/Week_3/Joke_API/)
 
 
-## Week 5 | 
+## Week 5 | Project 1
 ### Assignment: Project 1
 
 [International Space Station Live Tracker](https://hasiburratul.github.io/connectionslab/Week_5/Project1/)
@@ -52,14 +52,14 @@ Static webpage documenting NYUAD Campus Cats
 [Colab Draw](https://colab-draw-socket.herokuapp.com/)
 
 
-## Week 10 |
+## Week 10 | Project 2
 ### Assignment: Project 2
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_10/Project_2)
 
 [90's Tank Game](https://tank-game.herokuapp.com/)
 
-# Week 11 |
+# Week 11 | Popular Client-side Libraries
 ### Assignment: Adjust it
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_11/Assignment)
