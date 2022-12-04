@@ -1,0 +1,30 @@
+nav {
+  position: fixed;
+  top: 0em;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+#messageContainer {
+  width: 100%;
+  margin-top: 45px;
+  margin-bottom: 35vh;
+  z-index: 1;
+}
+
+/* Send Message board must stick to bottom */
+#sendMessageBoardDiv {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30vh;
+  border-top: 5px solid black;
+  z-index: 10;
+}
+
+.img-msg {
+  border: 2px solid rgb(145, 248, 255);
+  margin-bottom: 5px;
+}
