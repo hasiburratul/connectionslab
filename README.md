@@ -21,7 +21,7 @@ Static webpage documenting NYUAD Campus Cats
 [Tic Tac Toe](https://hasiburratul.github.io/connectionslab/Week_2/Assignment2/)
 
 ## Week 3 | Working with API (JSON Fetch)
-[Joke API](https://hasiburratul.github.io/connectionslab/Week_3/Joke_API)
+[Joke API](https://hasiburratul.github.io/connectionslab/Week_3/Joke_API/)
 
 
 ## Week 5 | 
