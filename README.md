@@ -49,7 +49,7 @@ Static webpage documenting NYUAD Campus Cats
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_8/Colab_Draw)
 
-[Colab Draw](https://noteit.herokuapp.com/)
+[Colab Draw](https://colab-draw-socket.herokuapp.com/)
 
 
 ## Week 10 |
