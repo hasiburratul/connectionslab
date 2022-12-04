@@ -20,10 +20,14 @@ Static webpage documenting NYUAD Campus Cats
 
 [Tic Tac Toe](https://hasiburratul.github.io/connectionslab/Week_2/Assignment2/)
 
-## Week 3 | 
+## Week 3 | Working with API (JSON Fetch)
+[Joke API](https://hasiburratul.github.io/connectionslab/Week_3/Joke_API)
+
+
+## Week 5 | 
 ### Assignment: Project 1
 
-[International Space Station Live Tracker](https://hasiburratul.github.io/connectionslab/Week_3/Project1/)
+[International Space Station Live Tracker](https://hasiburratul.github.io/connectionslab/Week_5/Project1/)
 
 ## Week 10 |
 ### Assignment: Project 2
