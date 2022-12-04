@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- Leaflet JavaScript Maps CSS stylesheet link -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <!-- Font Awesome stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- Leaflet JavaScript Maps script link: -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <!-- Leaflet.Terminator script -->
+  <script src=" https://unpkg.com/@joergdietrich/leaflet.terminator@1.0.0/L.Terminator.js"></script>
+  <!-- Fullscreen Control script and CSS file from Mapbox -->
+  <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+    rel='stylesheet' />
+
+  <link rel="shortcut icon" href="images/International_Space_Station_white.svg.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/International_Space_Station_white.svg.png">
+
+  <title>International Space Station Live</title>
+</head>
+
+<body>
+  <div class="header">
+    <div>
+      <h1>International Space Station Tracker</h1>
+    </div>
+    <div class="head-img-container">
+      <img src="images/International_Space_Station_white.svg.png" alt="" srcset="">
+    </div>
+  </div>
+  <div class="main-container">
+    <div class="panel-container">
+      <div class="orbital-data">
+        <h4>Orbital Data</h4>
+        <p>Latitude: <span id="lat-data"></span></p>
+        <p>Longitude: <span id="long-data"></span></p>
+        <p>Velocity: <span id="velocity"></span><strong> km/s</strong></p>
+        <p>Altitude: <span id="altitude"></span><strong> km</strong></p>
+        <p>ISS Visibility: <strong><span id="visibility"></span></strong></p>
+        <p id="iss-horizon"><img id="iss-horizon-img" src="images/PinClipart.com_pete-the-cat-buttons_1571732.png"
+            alt=""><span> ISS Horizon</span></p>
+      </div>
+      <div>
+        <button onclick="centreMap()">Find ISS <i class="fas fa-crosshairs"></i></button>
+      </div>
+      <div class="spacecraft-data">
+        <h4>Spacecraft @ ISS</h4>
+        <p><a id="craftwiki0" href="" target="_blank"><span id="craftname0"></span></a> <span id="craftflag0"><img
+              id="craftimg0" src="" /></span></p>
+        <p><a id="craftwiki1" href="" target="_blank"><span id="craftname1"></span></a> <span id="craftflag1"><img
+              id="craftimg1" src="" /></span></p>
+        <p><a id="craftwiki2" href="" target="_blank"><span id="craftname2"></span></a> <span id="craftflag2"><img
+              id="craftimg2" src="" /></span></p>
+        <p><a id="craftwiki3" href="" target="_blank"><span id="craftname3"></span></a> <span id="craftflag3"><img
+              id="craftimg3" src="" /></span></p>
+        <p><a id="craftwiki4" href="" target="_blank"><span id="craftname4"></span></a> <span id="craftflag4"><img
+              id="craftimg4" src="" /></span></p>
+      </div>
+    </div>
+    <div id="map-container"></div>
+    <div class="panel-container">
+      <div class="astro-data">
+        <h4>Current Crew</h4>
+        <p><a id="crewwiki0" href="" target="_blank"><span id="crewname0"></span></a>* <span id="crewflag0"><img
+              id="crewimg0" src="" /></span></p>
+        <p><a id="crewwiki1" href="" target="_blank"><span id="crewname1"></span></a> <span id="crewflag1"><img
+              id="crewimg1" src="" /></span></p>
+        <p><a id="crewwiki2" href="" target="_blank"><span id="crewname2"></span></a> <span id="crewflag2"><img
+              id="crewimg2" src="" /></span></p>
+        <p><a id="crewwiki3" href="" target="_blank"><span id="crewname3"></span></a> <span id="crewflag3"><img
+              id="crewimg3" src="" /></span></p>
+        <p><a id="crewwiki4" href="" target="_blank"><span id="crewname4"></span></a> <span id="crewflag4"><img
+              id="crewimg4" src="" /></span></p>
+        <p><a id="crewwiki5" href="" target="_blank"><span id="crewname5"></span></a> <span id="crewflag5"><img
+              id="crewimg5" src="" /></span></p>
+        <p><a id="crewwiki6" href="" target="_blank"><span id="crewname6"></span></a> <span id="crewflag6"><img
+              id="crewimg6" src="" /></span></p>
+        <p>* <span id="commander">Expedition Commander</span></p>
+        <p id="expedition">Expedition 67<span id="exp"></span></p>
+        <div id="exp-img-container">
+          <a href="https://en.wikipedia.org/wiki/Expedition_67" target="_blank"><img id="exp-img"
+              src="images/ISS_Expedition_67_Patch.png" alt="ISS Expedition 67 mission patch"
+              title="ISS Expedition 67 mission insignia">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="map"></div>
+  <div class="stream-container">
+    <iframe width="100%" height="100%" src="https://ustream.tv/embed/17074538" scrolling="no" allowfullscreen
+      webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+  </div>
+
+  <footer>
+    <a id="profile-link" href="https://github.com/hasiburratul" target="_blank"><i class="fab fa-github"></i>
+      hasibur</a>
+  </footer>
+</body>
+<!-- Custom JS script -->
+
+<script src="script.js"></script>
+
+</html>
