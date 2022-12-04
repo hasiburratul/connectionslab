@@ -7,7 +7,7 @@
 
 <img src="images/90's_tankGame.png" width="600">
 
-[Access Project Here](https://tank-game-socket.herokuapp.com/)
+[Access Project Here](https://tank-game.herokuapp.com/)
 
 ### Project Brief 
 
