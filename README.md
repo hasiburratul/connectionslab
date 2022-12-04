@@ -29,7 +29,7 @@ Static webpage documenting NYUAD Campus Cats
 
 
 ## Week 5 | Project 1
-### Assignment: Project 1
+### Assignment: ISS Tracker
 
 [International Space Station Live Tracker](https://hasiburratul.github.io/connectionslab/Week_5/Project1/)
 
@@ -50,7 +50,7 @@ Static webpage documenting NYUAD Campus Cats
 
 
 ## Week 10 | Project 2
-### Assignment: Project 2
+### Assignment: 90's Tank Game
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_10/Project_2)
 
