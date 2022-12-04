@@ -42,14 +42,9 @@ Static webpage documenting NYUAD Campus Cats
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_6/Note_It)
 
-[Note it](https://note-it-express.herokuapp.com/)
+[Note it](https://noteit.herokuapp.com/)
 
-## Week 7 | Integrating Databases - NeDB
-## Assignemnt: Let's Chat
 
-[Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_7/Let's_Chat)
-
-[Let's Chat]()
 
 ## Week 10 |
 ### Assignment: Project 2
