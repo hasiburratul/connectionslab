@@ -31,6 +31,8 @@ Static webpage documenting NYUAD Campus Cats
 ## Week 5 | Project 1
 ### Assignment: ISS Tracker
 
+[Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_5/Project_1)
+
 [International Space Station Live Tracker](https://hasiburratul.github.io/connectionslab/Week_5/Project1/)
 
 
