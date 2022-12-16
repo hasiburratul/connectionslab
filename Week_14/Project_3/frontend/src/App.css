@@ -1,0 +1,160 @@
+@import "~antd/dist/antd.css";
+
+.App {
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	background-image: url("background.svg");
+	background-repeat: repeat;
+	background-size: 200px auto;
+	transition: background-color 3s;
+	background-color: rgba(255, 208, 0, 0.1);
+	position: relative;
+}
+
+.Container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.title {
+	color: #fff;
+	-webkit-text-stroke: 1px #5769f2;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.brokenRobo {
+	width: 80%;
+	height: auto;
+}
+
+p {
+	margin: 0;
+}
+
+.turnNameBox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	padding: 3px;
+	background-color: rgb(255, 200, 0);
+	color: #fff;
+	text-align: center;
+}
+
+.modalWrapper {
+	height: 15vh;
+	margin: 1rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.halfDiv {
+	height: 100%;
+	width: 50%;
+	padding: 1rem;
+	border: 2px solid #d6d5ff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.modalText {
+	font-size: 1rem;
+	color: #8f8f8f;
+	margin-bottom: 1rem;
+}
+
+.deckContainer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+
+	overflow: hidden;
+}
+
+.roomContainer {
+	position: absolute;
+	top: 2rem;
+	left: 0;
+	height: 25vh;
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.stackContainer {
+	position: absolute;
+	top: 2rem;
+	left: 0;
+	height: 25vh;
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes rotating {
+	0% {
+		transform: rotate3d(1, 1, 1, 0deg);
+	}
+
+	20% {
+		transform: rotate3d(1, 1, 1, 20deg);
+	}
+
+	80% {
+		transform: rotate3d(1, 1, 1, -20deg);
+	}
+
+	100% {
+		transform: rotate3d(1, 1, 1, 0deg);
+	}
+}
+
+.logo{
+	width: 55%;
+	animation: rotating 10s ease-in-out infinite;
+	filter: drop-shadow(5px 5px 5px rgba(34, 34, 34, 0.712));
+}
+
+.modalHighlightText{
+	background-color: #fff472b0;
+    border-radius: 3px;
+    padding: 2px;
+    color: #e98080;
+}
+
+.colorPick{
+	width: 3rem;
+	height: 3rem;
+	border-radius: 5px;
+	margin: 1rem;
+	transition: all .2s;
+}
+
+.colorPick:active{
+	transform: translateY(10px) scale(.9);
+}

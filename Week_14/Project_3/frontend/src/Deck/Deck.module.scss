@@ -1,0 +1,107 @@
+.container {
+	width: 100%;
+	height: 80vh;
+	background-color: #f2ffdd;
+	position: relative;
+}
+
+.deck {
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	left: 50%;
+
+	transform: rotateX(15deg) translate(-50%, 0);
+}
+
+.flip {
+	transform-origin: 75% 0;
+	transform: translate(-50%, 0%) rotateY(180deg);
+}
+
+.blueGlow {
+	box-shadow: 0 0 16px 9px #00d8ff !important;
+	transform-origin: center;
+    transform: translateY(-50px);
+}
+
+
+.slider {
+	width: 100%;
+	background-color: rgb(255,200,0);
+	display: flex;
+	justify-content: center;
+	> * {
+		width: 80%;
+	}
+
+	@media screen and(min-width: 600px) {
+		> * {
+			width: 36%;
+		}
+	}
+}
+
+.cardsContainer{
+	width: 100vw;
+	height: 60vh;
+
+	@media screen and(min-width: 600px) {
+		width: 36vw;
+	}
+}
+
+.cardBox {
+	width: 60%;
+	height: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform-origin: bottom center;
+	transition: all .5s;
+
+}
+.card {
+	transition: all 1s;
+	width: 100%;
+	height: 100%;
+
+	border-radius: 15px;
+	box-shadow: -5px 10px 25px 8px #000c2559;
+	border: 2px solid rgb(255, 255, 255);
+}
+
+.playButtons{
+	width: 100%;
+	display: flex;    
+	justify-content: space-evenly;
+    align-items: center;
+	margin-bottom: 2rem;
+}
+
+.innerAnimatedDiv{
+	width: 100%;
+	height: 100%;
+	transform: translate(-30%,-50%);
+}
+
+.outerAnimatedDiv{
+	width: 100%;
+}
+
+.avatarIcon{
+    width: 5rem;
+    height: 5rem;
+    border: 3px solid white;
+    border-radius: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: 8rem;
+    transform: translate(-50%, 0);
+	transition: all .5s;
+}
+
+.glow{
+	box-shadow: 0 0 40px 10px #fa7373;
+}
