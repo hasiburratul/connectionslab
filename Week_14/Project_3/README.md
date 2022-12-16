@@ -2,7 +2,7 @@
 
 **Title**: Call Uno<br>
 **Category**: Project 3 <br>
-**Date**: 10 November <br>
+**Date**: 16 December <br>
 **Deliverable**: CSS | HTML | SASS | React | Javascript | Socket. IO | express | node.js <br>
 
 <img src="Extra/logo512.png" width="600">
@@ -49,7 +49,7 @@ Action cards have first letter as "x" representing no color
 ```
 [
 	"r1","r2","r3","r4","r5","r6","r7","r8","r9","rs","rr","rp",
-    "g1","g2","g3","g4","g5","g6","g7","g8","g9","gs","gr","gp",
+  "g1","g2","g3","g4","g5","g6","g7","g8","g9","gs","gr","gp",
 	"b1","b2","b3","b4","b5","b6","b7","b8","b9","bs","br","bp",
 	"y1","y2","y3","y4","y5","y6","y7","y8","y9","ys","yr","yp",
 	"xc","x4"
@@ -111,6 +111,8 @@ Currently for simplicity the same state is broadcasted to each player
 
 
 ### In Game Socket Events
+
+Details of the in game scokets events can be found in the GameLogic folder with comments. Due to the length of the events code I didn't inlcude the code snippets below.
 
 * <b> Client Side Events </b>
 
@@ -228,18 +230,14 @@ Fired when a client has disconnected from the server
 
 ### Play-Testing and Feedbacks
 
-Due to time limitations I didn't do any play-testing before completing the whole game mechanics. I used 90's generation people on campus first for the play test. From the first group of players my expectations were feedback regarding the game machanics and game flow. In the second and third round of the playtesting targeted audience were gamers on campus. During the second and third round my aim was to take feedback regarding the UI and UX. But as till 3rd round I didn't play tested with any non-gamer and Gen-Z players there was mixed review during the final round of the playtesting from mostly Gen-Z non-gamer players. Most of them actually missed readind the instruction and struggled during their first attempt to play.
+Due to time constraints, I did only 2 rounds of the playtesting. As one instance of the game requires a lot of time to play it was really hard to playtest. That's why before in person playtesting, I used differet tabs and tested most of the rules my self. While playtesting it was initially difficult to communicate with the testers about the main objective of the game (the game is to supplement normal in person game replacing the paper cards). After playtesting round I improved the UI and UX of the game. Initially the game didn't show the number of cards in hands of the other players. To make the game more intuitive I decided to change the background color based on the color of the card being played. I made a severe mistake during the playtesting. I gave the tester my devices(android phone, ipad, samsung tab) for testing. Due to which, I completely missed the fact that the gaem doesn't perform smoothly for the iPhones. All the feedbacks from the playtesting were very helpful and positive.
 
-However, as the aim of the project was to recreate a 90's version of the tank game, I decided not change the retro look of the tank game. 
 
 **Future Improvements:**
 
-During the last round of the playtesting I received lots of request for a 2 vs 2/ 4 vs 4 round of the game. In future I am planning to include those requests. And there are few bugs in the game when the tank directly moves towards the wall in the beginning of the game. I want to remove those bugs.
+As the game doesn't work smoothly with iPhones, I would like to change the UI of the game to improve performances. For smaller screen mobile devices I could display a different version of the game with different UI settings. I would like to add a QR code generator to the game.
 
 ### Reflection & Next Step
 
 **Reflection**
-
-I really enjoyed working on this. I regret not working in a group for the project. However, I got plenty of help from my rubber duck during coding the game. Before starting the work the whole project felt really simple. However, as soon as I started making the small blocks of code I realized how complex the game was. Without any game engine, buidling every single element from the bottom up was really difficult. I never thought the hardest part of the game would be determining the bullets movement path. I am now extremely proud of the curving bullet movement path. It was great working with sockets. I am very proud of completion of the project. Although I completed the game, I made mistake starting wiht the ideation of the game. Replicating something from 90's isn't always mean it would be easy to do.
-From the project I got a realization that something very simple from outside can be very complicated in practice.
-After I finished the project, I just felt massive respect for the last centuries game developers, who coded so many massive games without any game engine. 
+I really enjoyed working in this game. The biggest takeway from the project is that I could use the game in real life. I regret that I didn't display this game during the IM showcase. I initially decided not to display thinking the game will not be finished before the deadline. 
