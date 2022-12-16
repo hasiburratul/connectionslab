@@ -3,468 +3,237 @@
 **Title**: Call Uno<br>
 **Category**: Project 3 <br>
 **Date**: 10 November <br>
-**Deliverable**: CSS | HTML | Javascript | Socket. IO | express | node.js <br>
+**Deliverable**: CSS | HTML | SASS | React | Javascript | Socket. IO | express | node.js <br>
 
-<img src="images/90's_tankGame.png" width="600">
+<img src="Extra/logo512.png" width="600">
 
 [Access Project Here](https://call-uno.herokuapp.com/)
 
 ### Project Brief 
 
-This game is inspired by the classic tank game of 90's. On the landing page, players are requested to join the lobby with their username. In this game, players can chat with other players and challenge them for one round of the game. On the landing page, players are requested to join the lobby with their username. If one player accept other player's challenge then both players will be taken to the game page an game will start immediately. If one player disconnects from the game during the game, other player will get a notification and return to the main lobby. After one round ot the game, one can request for a rematch or return to the main lobby. 
+This project is a solution to one of my friend group's problems. Uno is a traditional card game for passing the time. From 2 to 8 players can play together using the printed card deck. Sometimes it becomes really difficult to keep track of 108 cards after one game. Besides, we are college students. The existing solution is to play online using the official UNO app or any third party website. However, when you are planning to meet in person and play together, that doesn’t help. So, this game is to supplement the in person playing of the Uno game, replacing the paper cards. The main focus is on making it simple and enjoyable  to use. No signup/login, No scoring system, no ranks, just you and your friends. The game inherits the classic Uno rules.
 
-### Wire Frame
+### Frontend
 
-For the game I started the project with two wireframe. I made one wireframe for the landing page and one canvas for the game play itself<br> <br>
+- Hand of cards will be shown in main playing screen.
 
-<img src="images/landingpage.jpg" width="600">
+- Player can throw the card by sliding them.
 
-<br> <br>
+- A menu window which will contain **settings**, **about** and any other options.
 
-<img src="images/gamepage.jpg" width="600"> <br> <br>
+For simplicity all the states about game will be maintained in App.js file itself
+
+
+### Backend
+
+- Game Creater will create room which others can join.
+
+- Each room will have room ID, each joining player(client) will be given IDs as well
+
+<p align="center"><img src="./assets/rooms.png" alt="rooms" width="50%"></p>
 
 ### Game Development 
 
 ### Challenges
 
-The toughest part of this project was to understand the game mechanics. It was really challenging to translate the physics of a tank into the game. I had to divide a tank movement into two parts: movement of the tnak and movement of the turret of the tank. To better understand the game mechanics I started with the workflow and translated the game part by part. To make the game realtime I made the socket enmit data as small as possible. The codes are shared with the workflow for better understanding.
+The toughest part of this project was to learn react within a limited time. After starting the frontend the major problem that I faced was to make the game light weight and more responsive. Initially the plan was to display the cards as image(png/jpeg). However, this didn't work as expected. Due to the socket connection the game wasn't as responsive as expected. I had to make the cards by svg afterwards to make the game more responsive. The socket connection were pretty simple for the game. I used SASS for the cards animation on the frontend.
 
 ### Workflow
 
-* <b> Initialize the server </b>
-* <b> New user click on the enter to the lobby to connect to socket.io</b>
-* <b> New users connect to socket.io </b>
-* <b> New users are added to the lobby & global chat box </b>
+* <b> Cards Rrepresations in game </b>
+
+Each card in game is represented using two letters. First letter represent color and second one number.
+
+Action cards have first letter as "x" representing no color
 
 ```
-   // Lobby
-  client.on("get users", function (data) {
-    client.emit("get users", usernames);
-  });
-
-  client.on("send message", function (data) {
-    client.broadcast.emit("send message", data);
-    client.emit("send message", data);
-  });
-
-  client.on("welcome message", function (data) {
-    client.emit("welcome message", data);
-  });
-
-  client.on("add user", function (username) {
-    // add the clients username to the global list of users
-    let userObj = {};
-    userObj.name = username;
-    userObj.id = client.id;
-    userObj.ingame = false;
-    usernames.push(userObj);
-    addedUser = true;
-    client.broadcast.emit("user joined", usernames);
-    client.emit("user joined", usernames);
-  });
-
+[
+	"r1","r2","r3","r4","r5","r6","r7","r8","r9","rs","rr","rp",
+    "g1","g2","g3","g4","g5","g6","g7","g8","g9","gs","gr","gp",
+	"b1","b2","b3","b4","b5","b6","b7","b8","b9","bs","br","bp",
+	"y1","y2","y3","y4","y5","y6","y7","y8","y9","ys","yr","yp",
+	"xc","x4"
+]
 ```
 
-* <b> Users challenging each other and accepting challenge </b>
+* <b> Game state </b>
+* 
+Three maps/objects are maintained on server
+
+    state
+    socketIdToClientId
+    clientIdToRoomId
+
+- state
+
+This stores the data about each game mapped to a roomId
+
+- socketIdToClientId
+
+This stores value mapped from socket Id to their client Id
+
+- clientIdToRoomId
+
+This stores value mapped from client Id to their respective room Id
+
+* <b> Single Game </b>
+
+For single game the following data is maintained
 
 ```
-  client.on("send challenge", function (data) {
-    enemyid = data.enemy;
-    playerid = data.player;
-    client.broadcast.to(enemyid).emit("send challenge", data);
-  });
-```
-
-* <b> After the game track user data and emit to the opponent </b>
-
-```
-// Game
-  client.on("commence game", function (data) {
-    inGame = true;
-    client.broadcast.to(data.enemy).emit("commence game", data);
-    let newData = {
-      player: data.enemy,
-      playerColor: data.enemyColor,
-      enemy: data.player,
-      enemyColor: data.playerColor,
-    };
-    client.emit("commence game", newData);
-  });
-
-  client.on("change game state", function (playerID, state) {
-    for (let i = 0; i < usernames.length; i++) {
-      if (usernames[i].id === playerID) {
-        usernames[i].ingame = state;
-        client.emit("change game state", playerID, state);
-      }
-    }
-    client.broadcast.emit("user joined", usernames);
-    client.emit("user joined", usernames);
-  });
-
-  client.on("canvasUpdate", function (data) {
-    client.broadcast.to(data.enemy).emit("canvasUpdate", data);
-  });
-
-```
-
-* <b> Update user's damage based on the opponent's action </b>
-  
-
-```
-   client.on("takeDamage", function (data) {
-    client.broadcast.to(data.enemy).emit("takeDamage", data);
-  });
-  ```
-
-* <b> Update users' health based on the opponent's action </b>
-  
-
-```
-  client.on("updateBullets", function (data) {
-    client.broadcast.to(data.enemy).emit("updateBullets", data);
-  });
-  ```
-
-* <b> If user's health is zero update the opponent </b>
-
-```
-  client.on("iLost", function (data) {
-    client.broadcast.to(data.enemy).emit("iLost", data);
-  });
-
-```
-
-* <b> Emit user's rematch request</b>
-  
-
-```
- client.on("rematch", function (data) {
-    client.broadcast.to(data.enemy).emit("rematch", data);
-  });
-
-  ```
-
- 
-* <b> Update the opponent if user leaves the game </b>
-
-```
-  client.on("iLeft", function (data) {
-
-    inGame = false;
-    client.broadcast.to(data.enemy).emit("iLeft", data);
-
-  }); 
-```
-
-* <b> Update user list if any user disconnects </b>
-
-```
-
-  // When client's socket disconnects, remove user from
-  // array of usernames, and broadcast updated usernames
-  client.on("disconnect", function () {
-
-    let otherPlayer;
-    // these letiables are misnomers: for one player, player id is himself, but
-    // for the other player, player id is the enemy.
-    if (enemyid === client.id) otherPlayer = playerid;
-    else otherPlayer = enemyid;
-    if (inGame) {
-      client.broadcast
-        .to(otherPlayer)
-        .emit("iLeft", { player: client.id, disconnected: true });
-    }
-    if (addedUser) {
-      usernames.forEach(function (object) {
-        if (object.id === client.id) {
-          usernames.splice(usernames.indexOf(object), 1);
-        }
-      });
-    }
-    client.broadcast.emit("user joined", usernames);
-    enemyid = null;
-    inGame = false;
-
-  }); 
-
-```
-
-### Game Canvas
-
-<b> The game's main canvas or map contains walls and the two tanks. The elements were drawn using canvas api.</b>
-
-<b> The function to draw the walls </b>
-
-```
-function makeWalls() {
-  let wallAnchors = [];
-  makeWallLengths(0.2,0.4,'vertical',0.2);
-  makeWallLengths(0.2,0.4,'vertical',0.8);
-  makeWallLengths(0.6,0.8,'vertical',0.2);
-  makeWallLengths(0.6,0.8,'vertical',0.8);
-
-  makeWallLengths(0.2,0.4,'horizontal',0.2);
-  makeWallLengths(0.2,0.4,'horizontal',0.8);
-  makeWallLengths(0.6,0.8,'horizontal',0.2);
-  makeWallLengths(0.6,0.8,'horizontal',0.8);
-
-  let centerWall = new Wall(canvas.width/2 - 20, canvas.height/2 - 20, 40, 40);
-  walls.push(centerWall);
-
-  // axisFract is the x or y to draw the line along, in fraction of the total canvas width/height
-  // it is assumed to be the axis that 'orientation' is not
-  function makeWallLengths(start,end,orientation,axisFract) {
-    let full;
-    let axis;
-    let coords;
-    if (orientation === 'vertical') {
-      full = canvas.height;
-      axis = canvas.width*axisFract;
-      coords = ['y','x'];
-    }
-    else {
-      full = canvas.width;
-      axis = canvas.height*axisFract;
-      coords = ['x','y'];
-    }
-    for (let i = full*start; i <= full*end; i+=10) {
-      let anchorCoords = {};
-      anchorCoords[coords[0]] = i;
-      anchorCoords[coords[1]] = axis;
-      wallAnchors.push(anchorCoords);
-    }
-  }
-
-  for (let i = 0; i < wallAnchors.length; i++) {
-    let wall = new Wall(wallAnchors[i].x, wallAnchors[i].y, 10, 10);
-    walls.push(wall);
-  }
-}
-
-function drawWalls() {
-  for (let i = 0; i < walls.length; i++) {
-    ctx.save();
-    ctx.translate(walls[i].anchor.x, walls[i].anchor.y);
-    ctx.fillStyle = 'lime';
-    ctx.fillRect(0,0,walls[i].width,walls[i].height);
-    ctx.restore();
-  }
+{
+    owner: //id of the owner,
+    players: [
+        {
+            clientId: //client id of this player,
+            name: // name of this player,
+            cards: // cards owned by this player,
+        },
+    ],
+    deckStack: //array of cards available in deck,
+    currentTurn: {
+        name: //name of player who should move next,
+        clientId: // it's client id,
+    },
+    stackTop: {
+        type: //type of card on top of stack,
+        color: //color of card on top of stack,
+        number: //number of card on top of stack,
+    },
+    dir: //direction of play,
+    countOfCardsToPick: //number of card to pick,
+    activePlus2: //boolean to know if +2 card is supposed to be thrown,
+    activePlus4: //boolean to know if +4 card is supposed to be thrown,
 }
 ```
 
-<b> The functions to draw the tank elements </b>
+Currently for simplicity the same state is broadcasted to each player
 
-```
-// Draws the tank
-function drawTank(tank) {
-  ctx.save();
-  ctx.translate(tank.coordinates.x,tank.coordinates.y);
-  ctx.rotate(tank.angle);
-  var fillPercent = tank.health/100;
-  var emptyWidth = tank.dimensions.width - fillPercent*tank.dimensions.width;
-  var fullWidth = fillPercent*tank.dimensions.width;
-  ctx.fillStyle = tank.color.main;
-  ctx.strokeStyle = tank.color.main;
-  // Draws an empty rectangle whose height indicates missing health
-  ctx.strokeRect(tank.dimensions.width*(-0.5), tank.dimensions.height*(-0.5), emptyWidth, tank.dimensions.height);
-  // Draws a full rectangle whose height indicates remaining health
-  ctx.fillRect(tank.dimensions.width*(-0.5) + emptyWidth, tank.dimensions.height*(-0.5), fullWidth, tank.dimensions.height);
-  drawArrow(tank);
-  ctx.restore();
-}
-
-// Draws an arrow on the tank indicating the front of the tank
-function drawArrow(tank) {
-  ctx.beginPath();
-  ctx.translate(0,0);
-  ctx.moveTo(-13,0);
-  ctx.lineTo(-5,-6);
-  ctx.lineTo(-5,6);
-  ctx.closePath();
-  ctx.fillStyle = tank.color.extra;
-  ctx.fill();
-}
-
-// Draws bullets
-function drawBullets(bulletArray,color) {
-  bulletArray.forEach(function(bullet) {
-    ctx.beginPath();
-    ctx.arc(bullet.coordinates.x, bullet.coordinates.y, 5, 0, 2*Math.PI, false);
-    ctx.closePath();
-    ctx.fillStyle = color;
-    ctx.fill();
-  });
-
-```
-
-### Tank's Physics
-
-<b> I tried immitate the real life tank's physics in the game. Hence, tank's movement aren't smooth enough. The turret of the tank also has different movement requirements than the tank itself as like the real life tank. The tank also has a fixed health prior to the start of the game. The tank also has acceleration and deceleration besides their normal movement. </b>
-
-```
-let Tank = function(nickname, color, coordinates, angle) {
-    this.player = nickname;
-    this.color = color;
-  
-    this.coordinates = coordinates;
-    this.dimensions = {width: 30, height: 30};
-  
-    this.velocity = 0;
-    this.maxForwardVelocity = 3;
-    this.maxBackwardsVelocity = -0.8;
-    this.forwardAccel = 0.04;
-    this.backwardsAccel = 0.08;
-    this.decel = 0.03;
-    this.angle = angle + 90*Math.PI/180;
-    this.turretAngle = angle;
-  
-    this.upPressed = false;
-    this.rightPressed = false;
-    this.downPressed = false;
-    this.leftPressed = false;
-  
-    this.health = 100;
-    this.gameOver = 0;
-  };
-
-```
-
-### In Game Mechanics
-
-For the game play the enemy tank's properties were updated from the information received from the enemy. During the gameplay, it was continuously checked if the tank was collided with the walls. If the bullets were hitting the user then the user's tank health was decreased by the amount of five. Bullet collisions were matched by the matching the coordinates of the tank's movment and bullet's movement. When the health reaches zero then the win/lose message was sent to the opponent.
 
 ### In Game Socket Events
 
-<b> Updates the canvas based on information received from enemy player </b>
+* <b> Client Side Events </b>
 
+- connect
+
+Fires when a successfull socket connection is made
+
+- welcome 
+
+Fired when server assigns a id to this socket connection
+
+**data expected**
 ```
-socket.on('canvasUpdate', function(data) {
-	receiveUpdate(enemyTank, data.attributes);
-});
-```
-
-<b> Updates the bullets based on information received from enemy player </b>
-
-```
-socket.on('updateBullets', function(data) {
-	enemyBullets = data.bullets;
-});
-```
-
-<b> Reduces health when enemy sends info that it hit you </b>
-
-```
-socket.on('takeDamage', function(data) {
-	myTank.health -= data.damage;
-});
-```
-
-<b> When the enemy's health hits zero you win </b>
-socket.on('iLost', function(data) {
-
-	myTank.gameOver = 1;
-	dieCenter = data.dieCenter;
-	explosionColor = data.color.explosion;
-
-}); 
-
-### Lobby Socket Events
-
-<b> Lobby chat welcome message </b>
-
-```
-socket.on('welcome message', function(data) {
-	let chatmessages = $('.chatmessagescontainer');
-	let message = $('<p>').addClass('message').attr('id', 'welcome-message').text(data);
-	chatmessages.append(message);
-});
-```
-
-<b> Gets users that are connected when you first join </b>
-
-```
-socket.on('get users', addUser);
-```
-
-<b> Updates users when a user joins </b>
-
-```
-socket.on('user joined', addUser);
-
-function addUser(users) {
-	let usersDiv = $('.current-users');
-	usersDiv.empty();
-	if (users.length > 0) {
-		users.forEach(function(userObj) {
-			let user = $('<div>').addClass('username-div');
-			let usernamePar = $('<p>').addClass('username-text').text(userObj['name']);
-			if (userObj.name.length > 10) {
-				usernamePar.css('font-size','20px').css('line-height','.75');
-			}
-			user.append(usernamePar);
-			user.attr('socketID', userObj['id']);
-			usersDiv.append(user);
-			if (userObj.name !== username && !userObj.ingame) {
-				user.append($('<div>').addClass('challenge-button user-button').text('Battle'));
-			}
-			else if (userObj.name !== username && userObj.ingame) {
-				user.append($('<div>').addClass('ingame-button user-button').text('In Game'));
-			}
-		});
-	}
+{
+    clientId: //id assigned by the server
 }
 ```
 
-<b> Receives a message and displays it </b>
+- toast
+
+Fired when server wants to show a toast message on UI
+
+**data expected**
 
 ```
-socket.on('send message', function(data) {
-	let chatmessages = $('.chatmessagescontainer');
-	let messageTag = $('<p>').addClass('message').text(data.message);
-	let userTag = $('<span>').addClass('username').text(data.name + ": ");
-	messageTag.prepend(userTag);
-	chatmessages.append(messageTag);
-	chatmessages[0].scrollTop = chatmessages[0].scrollHeight;
-});
+{
+    status: //boolean,
+    message: //text message
+}
 ```
+- stateUpdate
 
-<b> Receiving a challenge </b>
+Fires when server wants to update the client UI state
 
-```
-socket.on('send challenge', function(data) {
-	let message = $('<p>').addClass('message').addClass('challenge-message challenge-message-button').text(data.name + ' has challenged you! Click here to accept.').attr('invitation-id',data.player);
-	$('.chatmessagescontainer').append(message);
-});
-```
+**data expected**
 
-<b> Starts a game between two people </b>
+Total game state object
+- makeGame
+
+Fires when server creates a new game
+
+**data expected**
 
 ```
-socket.on('commence game', function(players) {
-
-	$('.challenge-message').remove();
-	socket.emit('change game state', players.player, true);
-	$('canvas').show();
-	$('#main-title').hide();
-	$('#splashpage').hide();
-	$('#lobby').hide();
-	$('#end').remove();
-	startGame(players.enemy, players.enemyColor, players.player, players.playerColor);
-
-}); 
-
-socket.on('change game state', function(playerID) {
-
-	let users = $('.username-div');
-	for (let i = 0; i < users.length; i++) {
-		if (users.eq(i).attr('socketid') === playerID) {
-			users.eq(i).find('.challenge-button').attr('class','ingame-button user-button').text('In Game');
-		}
-	}
-
-}); 
+{
+    gameId: //id of the game room
+}
 ```
+
+- chooseColor
+
+Fires when server wants client to choose a new color
+
+- ENDGAME
+
+Fires when any player has won
+
+**data expected**
+```
+{
+    winner: //name of the winner
+}
+```
+* <b> Server Side Events </b>
+
+- makeGame
+
+Fired when a client wants to create a new game
+
+**data expected**
+```
+{
+    clientId: //id of client,
+    name: //name of the client
+}
+```
+
+- joinGame
+
+Fired when a client wants to join a game
+
+**data expected**
+```
+{
+    clientId: //id of client,
+    gameId: //id of game he wants to join,
+    name: //name of the client
+}
+```
+
+- playCard
+
+Fired when a player throws a card
+
+**data expected**
+```
+{
+    card: {
+        type: //type of card,
+        color: //color of card,
+        number: //number of card
+    }
+}
+```
+
+- setColor
+
+Fired when a client wants to change color of game
+
+**data expected**
+```
+{
+    color: //chosen color
+}
+```
+
+- drawCard
+
+Fired when a client wants to pick a card
+
+- disconnecting
+
+Fired when a client has disconnected from the server
 
 ### Play-Testing and Feedbacks
 
