@@ -6,7 +6,7 @@
 
 <img src="images/90's_tankGame.png" width="600">
 
-[Access Project Here](https://hasiburratul.github.io/connectionslab/Week_5/Project1/)
+[Access Project Here](https://hasiburratul.github.io/connectionslab/Week_5/Project_1/)
 
 ### Project Brief 
 

@@ -33,7 +33,7 @@ Static webpage documenting NYUAD Campus Cats
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_5/Project_1)
 
-[International Space Station Live Tracker](https://hasiburratul.github.io/connectionslab/Week_5/Project1/)
+[International Space Station Live Tracker](https://hasiburratul.github.io/connectionslab/Week_5/Project_1/)
 
 
 ## Week 6 | Node-Express
