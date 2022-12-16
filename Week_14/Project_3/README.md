@@ -237,7 +237,5 @@ Due to time constraints, I did only 2 rounds of the playtesting. As one instance
 
 As the game doesn't work smoothly with iPhones, I would like to change the UI of the game to improve performances. For smaller screen mobile devices I could display a different version of the game with different UI settings. I would like to add a QR code generator to the game.
 
-### Reflection & Next Step
-
-**Reflection**
-I really enjoyed working in this game. The biggest takeway from the project is that I could use the game in real life. I regret that I didn't display this game during the IM showcase. I initially decided not to display thinking the game will not be finished before the deadline. 
+### Reflection 
+I really enjoyed working in this game. The biggest takeway from the project is that I could use the game in real life. During the development of the game I lerned react and SASS. I am planning to start learning redux properly. I regret that I didn't display this game during the IM showcase. I initially decided not to display thinking the game will not be finished before the deadline. 
