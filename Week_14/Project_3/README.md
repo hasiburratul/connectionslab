@@ -18,8 +18,10 @@ This project is a solution to one of my friend group's problems. Uno is a tradit
 - Hand of cards will be shown in main playing screen.
 
 - Player can throw the card by sliding them.
-
-- A menu window which will contain **settings**, **about** and any other options.
+  
+- Player can shuffle the cards by clickking on the **shuffle** button.
+  
+- Player can hide his/her cards by clicking **hide** button. Hiding the cards becomes really important when you are playing    in-person
 
 For simplicity all the states about game will be maintained in App.js file itself
 
