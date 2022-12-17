@@ -23,13 +23,13 @@ Overall, the project allows users to view the current location of the ISS on a m
 
 The initial ideas for the wireframes for the index.html and tempmap.html files are as follows:
 
-* <b> Index.html: </b>
+* <b> index.html: </b>
 
 - Header section with logo and navigation links
 - Main content area displaying the ISS map via an iframe
 - Footer section with copyright information
 
-* <b> Map.html: </b>
+* <b> tempmap.html: </b>
 
 - Map container div to hold the map
 - JavaScript code to initialize the map and add the heatmap layer
