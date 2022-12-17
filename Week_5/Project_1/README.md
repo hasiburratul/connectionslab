@@ -52,16 +52,16 @@ However, the most difficult of the project was to understand the custom interpol
 
 ### Workflow
 
-* <b> The index.html file is the main file for the project and it is used to display the user interface for the project.
-The CSS file is used to style the index.html file and give it a visually appealing look. </b>
+* The index.html file is the main file for the project and it is used to display the user interface for the project.
+The CSS file is used to style the index.html file and give it a visually appealing look. 
 
-* <b> The index.html file includes an iframe that displays the map.html file, which contains the map and its related functionality. </b>
+* The index.html file includes an iframe that displays the map.html file, which contains the map and its related functionality. <
   
-* <b> The script.js file is used to fetch data from the International Space Station (ISS) API and display it on the map. </b>
+* The script.js file is used to fetch data from the International Space Station (ISS) API and display it on the map. 
 
-* <b> The map.js file is used in conjunction with the mapbox library to create and display the interactive map on the map.html file. This file also uses the custom interpolateHeatmapLayer.js library.</b>
+* The map.js file is used in conjunction with the mapbox library to create and display the interactive map on the map.html file. This file also uses the custom interpolateHeatmapLayer.js library.
   
-* <b> The tempmap.html file also includes the interpolateHeatmapLayer.js file, which is used to create the heatmap layer on the map. </b>
+* The tempmap.html file also includes the interpolateHeatmapLayer.js file, which is used to create the heatmap layer on the map. 
 
 
 **Key Details of the API and js events:**
