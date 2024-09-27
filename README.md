@@ -41,7 +41,7 @@ Static webpage documenting NYUAD Campus Cats
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_6/Note_It)
 
-[Note it](https://noteit.herokuapp.com/)
+[Note it](https://note-it-46d454391cf4.herokuapp.com/)
 
 ## Week 8 | Socket.io
 ### Assignment: Colab Draw
