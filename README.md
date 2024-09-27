@@ -69,4 +69,4 @@ Static webpage documenting NYUAD Campus Cats
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_14/Project_3)
 
-[Call Uno](https://call-uno.herokuapp.com)
+[Call Uno]([https://call-uno.herokuapp.com](https://call-uno-673ae6ef75e0.herokuapp.com/))
