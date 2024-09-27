@@ -54,7 +54,7 @@ Static webpage documenting NYUAD Campus Cats
 
 [Project Documentation](https://github.com/hasiburratul/connectionslab/tree/main/Week_10/Project_2)
 
-[90's Tank Game](https://tank-game.herokuapp.com/)
+[90's Tank Game](https://tank-game-01b286948006.herokuapp.com/)
 
 # Week 11 | Popular Client-side Libraries
 ### Assignment: Adjust it
