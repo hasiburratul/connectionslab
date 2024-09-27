@@ -6,7 +6,7 @@
 
 This is a note taking application that writes, saves, and deletes notes. It is a Node.js server-side application that has routes for handling HTTP requests and rendering HTML pages.
 
-[Access Project Here](https://noteit.herokuapp.com/)
+[Access Project Here](https://note-it-46d454391cf4.herokuapp.com/)
 
 ### Server-side
 - <b> server.js: </b> the entry point for the server-side of the application. This file sets up the express app and defines the routes for the application.
