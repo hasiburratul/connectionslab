@@ -46,7 +46,7 @@ Static webpage documenting NYUAD Campus Cats
 ## Week 8 | Socket.io
 ### Assignment: Colab Draw
 
-[Colab Draw](https://colab-draw-socket.herokuapp.com/)
+[Colab Draw](https://colab-draw-bb6b7571c5af.herokuapp.com/)
 
 
 ## Week 10 | Project 2
